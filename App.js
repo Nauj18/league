@@ -1,28 +1,45 @@
 import React from 'react';
-import { StyleSheet, Text, Image,ImageBackground } from 'react-native';
+import {View, StyleSheet, Text, Image,ImageBackground, Button, TouchableOpacity  } from 'react-native';
+
+import {
+  createBottomTabNavigator
+} from 'react-navigation';
+
+import Menu from './screens/main';
+import Champs from './screens/champ';
+import Summoner from './screens/summoner';
+import Items from './screens/item';
+import Patch from './screens/patch';
 
 export default class App extends React.Component {
-
-  
   render() {
+    const MainNavigator = createBottomTabNavigator({
+      Main: Menu,
+      Summoners: Summoner,
+      Champions: Champs,
+      Items: Items,
+      Patch: Patch
+    },{
+        navigationOptions:{
+          tabBarVisible: false
+        },
+        lazy:true
+      });
     return (
-      <ImageBackground source={require('./assets/background.jpg')} 
-      style={{flex: 1,
-        width: '100%',
-        height: '100%'
-        }}>
-        <Image source={require('./assets/Banner.png')} />;
-        <Text style={styles}>Inside</Text>
-      </ImageBackground>
+        <View style={styles.container}>
+          <MainNavigator />
+        </View>
     );
   }
 }
 
+
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+container: {
+  flex: 1,
+  backgroundColor: '#fff',
+  // DELETE alignItems
+  justifyContent: 'center',
+},
 });
