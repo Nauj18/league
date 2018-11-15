@@ -15,13 +15,27 @@ class patch extends React.Component {
             width: undefined,
             height: undefined
             }}>
-            <Text>patch</Text>
-            <Text>patch</Text>
-            <Text>patch</Text>
-            <Text>patch</Text>
-            <Text>patch</Text>
+            
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
+            <Text style={styles.textStyle}>Patch</Text>
         </ImageBackground>
         )
+
     }
 }
+
+const styles = StyleSheet.create({
+    textStyle: {
+      color: 'white',
+      alignSelf: 'center'
+    },
+  });
 export default patch;

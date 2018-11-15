@@ -15,15 +15,24 @@ class item extends React.Component {
             width: undefined,
             height: undefined
             }}>
-            <Text>ITems</Text>
-            <Text>ITems</Text>
-            <Text>ITems</Text>
-            <Text>ITems</Text>
-            <Text>ITems</Text>
-            <Text>ITems</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
+            <Text style={styles.textStyle}>Items</Text>
         </ImageBackground>
         )
 
     }
 }
+
+const styles = StyleSheet.create({
+    textStyle: {
+      color: 'white',
+      alignSelf: 'center'
+    },
+  });
 export default item;

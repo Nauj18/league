@@ -15,14 +15,24 @@ class champ extends React.Component {
             width: undefined,
             height: undefined
             }}>
-            <Text>champ</Text>
-            <Text>champ</Text>
-            <Text>champ</Text>
-            <Text>champ</Text>
-            <Text>champ</Text>
-            <Text>champ</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
+            <Text style={styles.textStyle}>Champion</Text>
         </ImageBackground>
         )
+
     }
 }
+
+const styles = StyleSheet.create({
+    textStyle: {
+      color: 'white',
+      alignSelf: 'center'
+    },
+  });
 export default champ;

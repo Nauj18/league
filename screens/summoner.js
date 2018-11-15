@@ -27,17 +27,24 @@ class summoner extends React.Component {
             width: undefined,
             height: undefined
             }}>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
-            <Text>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
+            <Text style={styles.textStyle}>Summoner</Text>
         </ImageBackground>
         )
 
-
     }
 }
+
+const styles = StyleSheet.create({
+    textStyle: {
+      color: 'white',
+      alignSelf: 'center'
+    },
+  });
 export default summoner;
