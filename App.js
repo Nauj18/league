@@ -10,6 +10,7 @@ import Champs from './screens/champ';
 import Summoner from './screens/summoner';
 import Items from './screens/item';
 import Patch from './screens/patch';
+import SummonerInfo from './screens/summonerInfo';
 
 export default class App extends React.Component {
   render() {
@@ -18,7 +19,8 @@ export default class App extends React.Component {
       Summoners: Summoner,
       Champions: Champs,
       Items: Items,
-      Patch: Patch
+      Patch: Patch,
+      SummonerInfo : SummonerInfo,
     },{
         navigationOptions:{
           tabBarVisible: false

@@ -1,9 +1,5 @@
 import React from 'react';
-import { StyleSheet,Platform, Text, Image,ImageBackground, Header, TouchableOpacity  } from 'react-native';
-import api from '../utill/api'
-
-
-//api expires after a day so make sure to change it!!
+import { StyleSheet,Platform, Text, TextInput, Image,ImageBackground, Header, TouchableOpacity  } from 'react-native';
 
 class summoner extends React.Component {
     static navigationOptions = ({ navigation }) => ({
@@ -23,20 +19,7 @@ class summoner extends React.Component {
         }
     });
 
-    constructor(props){
-        super(props);
-        this.state = {
-            summoner:[]
-        }
-    }
-
-    componentWillMount(){
-        api.getSummoner('Casual Clock').then((res)=>{
-            this.setState({
-               summoner: res 
-            })
-        });
-    }
+    state = {text:""}
     
 
     render() {
@@ -47,8 +30,18 @@ class summoner extends React.Component {
             width: undefined,
             height: undefined
             }}>
-            <Text style={styles.textStyle}>Summoner: {this.state.summoner.name}</Text>
-            <Text style={styles.textStyle}>Level: {this.state.summoner.summonerLevel}</Text>
+            <Text style = {styles.textStyle}>Input Summoner Name</Text>
+            <TextInput 
+            style = {{top: 100, height: 40, width: 100, color: 'white',alignSelf: 'center'}}
+            onChangeText={text => this.setState({text})}>
+            </TextInput>
+            <TouchableOpacity
+            style={styles.buttonStyle}
+            title = "Search"
+            color="#841584"
+            onPress={() => this.props.navigation.navigate('SummonerInfo',  { text: this.state.text} )}>
+            <Text>Search Summoner</Text>
+            </TouchableOpacity>          
         </ImageBackground>
         )
 
@@ -57,8 +50,18 @@ class summoner extends React.Component {
 
 const styles = StyleSheet.create({
     textStyle: {
+      paddingTop: 100,
       color: 'white',
-      alignSelf: 'center'
+      alignSelf: 'center',
     },
+    buttonStyle: {
+        padding: 20,
+        top: 150,
+        backgroundColor: 'gold',
+        alignItems: 'center',
+        alignSelf: 'center',
+        justifyContent: 'center',
+        width:250
+      },
   });
 export default summoner;
