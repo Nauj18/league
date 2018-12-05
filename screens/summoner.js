@@ -23,7 +23,8 @@ class summoner extends React.Component {
     
 
     render() {
-        console.log("Summoner: ",this.state)
+        //console.log("Summoner: ",this.state)
+        
         return(
             <ImageBackground source={require('../assets/background.jpg')}
         style={{flex: 1,

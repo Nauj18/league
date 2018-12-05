@@ -1,0 +1,5 @@
+var summonerPic = ""
+var summonerName = ""
+var summonerLevel = ""
+var summonerAcountId = ""
+var summonerId = ""
