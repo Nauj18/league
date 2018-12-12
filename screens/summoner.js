@@ -19,6 +19,7 @@ class summoner extends React.Component {
         }
     });
 
+
     state = {text:""}
     
 

@@ -1,3 +1,5 @@
+var key = "RGAPI-91bdc672-d1c2-4941-a0b8-c7a7c09f3cf8"
+
 var api = {
 
     /*
@@ -15,7 +17,7 @@ var api = {
     */
 
     getSummoner(name){
-        var url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/`+name+`?api_key=RGAPI-20b022cb-837c-4d8f-b3e6-f6c044603945`;
+        var url = `https://na1.api.riotgames.com/lol/summoner/v3/summoners/by-name/`+name+`?api_key=`+key;
         return fetch(url).then((res) => res.json());
     },
 
@@ -43,7 +45,7 @@ var api = {
 
 
     getRankInfo(id){
-        var url2 = `https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/`+id+`?api_key=RGAPI-20b022cb-837c-4d8f-b3e6-f6c044603945`;
+        var url2 = `https://na1.api.riotgames.com/lol/league/v4/positions/by-summoner/`+id+`?api_key=`+key;
         return fetch(url2).then((res) => res.json());
     }
 }

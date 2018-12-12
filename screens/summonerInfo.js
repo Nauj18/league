@@ -13,11 +13,18 @@ class summonerInfo extends React.Component {
         super(props);
         this.state = {
             sum:[],
-            rankInformation:[]
+
         }
     }
 
     componentWillMount(){
+        api.getRankInfo(this.state.sum.id).then((res)=>{
+            console.log(res)
+            this.setState({
+                sum:res
+ 
+            })
+        })
         api.getSummoner(this.props.navigation.state.params.text).then((res)=>{
             console.log(res)
             this.setState({
@@ -25,15 +32,9 @@ class summonerInfo extends React.Component {
             })
         })
         //console.log(this.state.sum.id)
-        var id =this.state.sum.id
+        //var id =this.state.sum.id
         //console.log("This is the id: "+id)
-        api.getRankInfo(this.state.sum.id).then((res)=>{
-            console.log(res)
-            this.setState({
-                sum:[],
-               rankInformation: res
-            })
-        })
+        
         
     }
 
@@ -56,7 +57,8 @@ class summonerInfo extends React.Component {
             <Text style={styles.textStyle}>Summoner: {this.state.sum.name}</Text>
             <Text style={styles.textStyle}>Level: {this.state.sum.summonerLevel}</Text>
 
-            {<Text style={styles.textStyle}>Rank Level: {this.state.rankInformation.tier}</Text>}
+            {<Text style={styles.textStyle}>Rank Level: {this.state.sum.tier}</Text>}
+            <Image style = {styles.iconStyle} source={require('../assets/base-icons/gold.png')}></Image>
             {/* </View> */}
         </ImageBackground>
         )
